@@ -3,6 +3,9 @@ const cors = require("cors");
 const express = require("express");
 const userRouter = require("./user/routes");
 const User = require("./user/model");
+const Training = require("./trainig/model");
+const Exercise = require("./exercise/model");
+const Day = require("./day/model");
 
 const app = express();
 
