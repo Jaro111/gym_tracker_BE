@@ -6,7 +6,6 @@ const Exercise = sequelize.define(
   {
     name: { type: DataTypes.STRING(30), allowNull: flase },
     reps: { type: DataTypes.INTEGER, defaultValue: 0 },
-    sets: { type: DataTypes.INTEGER, defaultValue: 0 },
     setsDone: { type: DataTypes.INTEGER, defaultValue: 0 },
   },
   { timestamps: false }

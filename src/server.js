@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(userRouter);
 
 const SyncTables = async () => {
+  User.ha;
   User.sync();
 };
 
