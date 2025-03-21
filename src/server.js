@@ -17,7 +17,9 @@ app.use(express.json());
 app.use(userRouter);
 
 const SyncTables = async () => {
-  User.ha;
+  User.hasMany(Training, { foreignKey: "userId" });
+  Training.belongsTo(User, { foreignKey: "userId" });
+  Training;
   User.sync();
 };
 
