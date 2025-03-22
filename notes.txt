@@ -1,6 +1,1 @@
-User.hasMany(Training, { foreignKey: 'userId' });
-Training.belongsTo(User, { foreignKey: 'userId' });
-Training.hasMany(Day, { foreignKey: 'trainingId' });
-Day.belongsTo(Training, { foreignKey: 'trainingId' });
-Training.hasMany(Exercise, { foreignKey: 'trainingId' });
-Exercise.belongsTo(Training, { foreignKey: 'trainingId' });
+

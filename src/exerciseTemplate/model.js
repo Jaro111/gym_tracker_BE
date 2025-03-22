@@ -1,10 +1,11 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../db/connection");
 
-const Day = sequelize.define(
-  "Day",
+const ExerciseTemplate = sequelize.define(
+  "ExerciseTemplate",
   {
-    date: { type: DataTypes.DATEONLY, allowNull: false },
+    name: { type: DataTypes.STRING(50), allowNull: false },
+    sets: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 }, // Planned sets
     trainingId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -14,4 +15,4 @@ const Day = sequelize.define(
   { timestamps: false }
 );
 
-module.exports = Day;
+module.exports = ExerciseTemplate;
