@@ -4,14 +4,22 @@ const sequelize = require("../db/connection");
 const Exercise = sequelize.define(
   "Exercise",
   {
-    name: { type: DataTypes.STRING(30), allowNull: flase },
-    weight: { type: DataTypes.INTEGER, defaultValue: 0 },
-    reps: { type: DataTypes.INTEGER, defaultValue: 0 },
-    sets: { type: DataTypes.INTEGER, defaultValue: 0 },
-    setsDone: { type: DataTypes.INTEGER, defaultValue: 0 },
-    maxWeight: { type: DataTypes.FLOAT, defaultValue: 0 },
+    templateId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: { model: "ExerciseTemplates", key: "id" },
+    },
+    dayId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: { model: "Days", key: "id" },
+    },
+    createdAt: { type: DataTypes.DATE, allowNull: false },
   },
-  { timestamps: false }
+  {
+    timestamps: true,
+    updatedAt: false,
+  }
 );
 
 module.exports = Exercise;

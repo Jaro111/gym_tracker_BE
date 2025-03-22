@@ -5,7 +5,11 @@ const Training = sequelize.define(
   "Training",
   {
     name: { type: DataTypes.STRING(20), allowNull: false },
-    userId: { type: DataTypes.INTEGER, allowNull: false },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: { model: "Users", key: "id" },
+    },
   },
   { timestamps: false }
 );
