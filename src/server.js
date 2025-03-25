@@ -5,6 +5,8 @@ const express = require("express");
 const userRouter = require("./user/routes");
 const exampleExerciseRouter = require("./exampleExercise/routes");
 const trainingRouter = require("./trainig/routes");
+const exerciseTemplateRouter = require("./exerciseTemplate/routes");
+const dayRouter = require("./day/routes");
 const User = require("./user/model");
 const Training = require("./trainig/model");
 const Exercise = require("./exercise/model");
@@ -25,6 +27,8 @@ app.use(express.json());
 app.use(userRouter);
 app.use(exampleExerciseRouter);
 app.use(trainingRouter);
+app.use(exerciseTemplateRouter);
+app.use(dayRouter);
 
 const SyncTables = async () => {
   try {

@@ -4,7 +4,7 @@ const sequelize = require("../db/connection");
 const Day = sequelize.define(
   "Day",
   {
-    date: { type: DataTypes.DATEONLY, allowNull: false },
+    date: { type: DataTypes.DATEONLY, allowNull: false, unique: true },
     trainingId: {
       type: DataTypes.INTEGER,
       allowNull: false,

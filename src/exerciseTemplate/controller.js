@@ -1,0 +1,19 @@
+const ExerciseTemplate = require("./model");
+
+const addExerciseTemplate = async (req, res) => {
+  try {
+    const { name, sets, reps, trainingId } = req.body;
+    const exerise = await ExerciseTemplate.create({
+      name: name,
+      sets: sets,
+      reps: reps,
+      trainingId: trainingId,
+    });
+
+    res.status(200).json({ message: "Template created", exercise: exerise });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
+module.exports = { addExerciseTemplate };
