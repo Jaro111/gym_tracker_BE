@@ -2,11 +2,11 @@ const Training = require("./model");
 
 const addTraining = async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, userId } = req.body;
 
-    const training = await Training.create({ name: name });
+    const training = await Training.create({ name: name, userId: userId });
 
-    res.status(500).jsnon({ message: error.message, error: error });
+    res.status(500).json({ message: "Training created", training: training });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
