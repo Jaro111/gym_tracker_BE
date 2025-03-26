@@ -1,11 +1,10 @@
 const Day = require("./model");
-const Training = require("../trainig/model");
 
 const addTrainingDay = async (req, res) => {
   try {
     const { date, trainingId } = req.body;
 
-    const day = await Day.create({ date: date, trainingId: trainingId });
+    // const day = await Day.create({ date: date, trainingId: trainingId });
 
     const trainingDay = await Day.findOne({
       where: { date: date },
