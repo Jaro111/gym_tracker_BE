@@ -4,11 +4,15 @@ const sequelize = require("../db/connection");
 const Day = sequelize.define(
   "Day",
   {
-    date: { type: DataTypes.DATEONLY, allowNull: false, unique: true },
-    trainingId: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: { model: "Trainings", key: "id" },
+      references: { model: "Users", key: "id" },
+    },
+
+    date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
     },
   },
   { timestamps: false }

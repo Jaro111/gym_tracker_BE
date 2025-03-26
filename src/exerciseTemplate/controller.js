@@ -2,10 +2,12 @@ const ExerciseTemplate = require("./model");
 
 const addExerciseTemplate = async (req, res) => {
   try {
-    const { name, sets, reps, trainingId } = req.body;
+    const { name, sets, reps, trainingId, setsFrom, setsTo } = req.body;
     const exerise = await ExerciseTemplate.create({
       name: name,
       sets: sets,
+      setsFrom: setsFrom,
+      setsTo: setsTo,
       reps: reps,
       trainingId: trainingId,
     });
