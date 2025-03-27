@@ -5,7 +5,7 @@ const exerciseTemplateRouter = Router();
 const { addExerciseTemplate } = require("./controller");
 
 exerciseTemplateRouter.post(
-  "/training/addExerciseTemplate",
+  "/exercises/addExerciseTemplate",
   addExerciseTemplate
 );
 

@@ -1,1 +1,5 @@
-
+async function copyMultipleRows() {
+  const rows = await MainTable.findAll({ raw: true });
+  await SecondTable.bulkCreate(rows);
+  console.log('Rows copied successfully');
+}

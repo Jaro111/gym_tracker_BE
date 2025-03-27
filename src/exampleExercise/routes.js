@@ -4,6 +4,6 @@ const { addExampleExercise } = require("./controller");
 
 const exampleExerciseRouter = Router();
 
-exampleExerciseRouter.post("/user/addExampleExercise", addExampleExercise);
+exampleExerciseRouter.post("/example/addExampleExercise", addExampleExercise);
 
 module.exports = exampleExerciseRouter;

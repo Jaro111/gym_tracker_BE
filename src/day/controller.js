@@ -1,22 +1,41 @@
 const Day = require("./model");
+const Exercise = require("../exercise/model");
+const ExerciseTemplate = require("../exerciseTemplate/model");
+const Training = require("../trainig/model");
 
+// Create Training day
 const addTrainingDay = async (req, res) => {
   try {
-    const { date, trainingId } = req.body;
+    const { userId, date, trainingId } = req.body;
 
-    // const day = await Day.create({ date: date, trainingId: trainingId });
-
-    const trainingDay = await Day.findOne({
-      where: { date: date },
-      include: ["Training"],
+    const templateData = await ExerciseTemplate.findAll({
+      where: { trainingId: trainingId },
+    });
+    const trainingName = await Training.findOne({
+      where: { id: trainingId, userId: userId },
     });
 
-    traininName = trainingDay.Training.dataValues.name;
-
-    res.status(200).json({
-      message: `Assigned ${traininName} to ${date} `,
-      day: trainingDay,
+    const day = await Day.create({
+      userId: userId,
+      trainingName: trainingName.name,
+      date: date,
     });
+
+    const exerciseData = templateData.map((template) => ({
+      name: template.name,
+      sets: template.sets,
+      setsFrom: template.setsFrom,
+      setsTo: template.setsTo,
+      reps: template.reps,
+      maxWeight: template.maxWeight,
+      lastWeight: template.lastWeight,
+      category: template.category,
+      dayId: day.id,
+    }));
+    //
+    const exercises = await Exercise.bulkCreate(exerciseData);
+    //
+    res.status(200).json({ message: "Assigned", exercises: exercises });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }

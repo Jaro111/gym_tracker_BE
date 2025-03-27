@@ -3,10 +3,12 @@ const sequelize = require("./db/connection");
 const cors = require("cors");
 const express = require("express");
 const userRouter = require("./user/routes");
-const exampleExerciseRouter = require("./exampleExercise/routes");
 const trainingRouter = require("./trainig/routes");
 const exerciseTemplateRouter = require("./exerciseTemplate/routes");
 const dayRouter = require("./day/routes");
+const categoryRouter = require("./exampleCategory/routes");
+const exampleExerciseRouter = require("./exampleExercise/routes");
+const categoryLinkRouter = require("./categoryLink/routes");
 const User = require("./user/model");
 const Training = require("./trainig/model");
 const Day = require("./day/model");
@@ -29,6 +31,8 @@ app.use(dayRouter);
 app.use(trainingRouter);
 app.use(exerciseTemplateRouter);
 app.use(exampleExerciseRouter);
+app.use(categoryRouter);
+app.use(categoryLinkRouter);
 
 const SyncTables = async () => {
   try {
