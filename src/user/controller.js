@@ -1,5 +1,6 @@
 const User = require("./model");
 
+// Sign Up
 const signupUser = async (req, res) => {
   try {
     const { username, email, password, role } = req.body;
@@ -24,4 +25,15 @@ const signupUser = async (req, res) => {
   }
 };
 
-module.exports = { signupUser };
+// Log In
+
+const logIn = async (req, res) => {
+  try {
+    const { user } = req.body;
+    res.status(200).json({ message: "Logged In", user: user });
+  } catch (error) {
+    res.status(501).json({ message: error.message, error: error });
+  }
+};
+
+module.exports = { signupUser, logIn };
