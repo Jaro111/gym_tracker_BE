@@ -44,7 +44,6 @@ const logIn = async (req, res) => {
       return;
     }
     const token = await jwt.sign({ id: req.user.id }, process.env.SECRET);
-    console.log(token);
 
     const user = {
       id: req.user.id,
