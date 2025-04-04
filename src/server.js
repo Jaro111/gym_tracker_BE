@@ -9,6 +9,7 @@ const dayRouter = require("./day/routes");
 const categoryRouter = require("./exampleCategory/routes");
 const exampleExerciseRouter = require("./exampleExercise/routes");
 const categoryLinkRouter = require("./categoryLink/routes");
+const exerciseRouter = require("./exercise/routes");
 const User = require("./user/model");
 const Training = require("./trainig/model");
 const Day = require("./day/model");
@@ -33,6 +34,7 @@ app.use(exerciseTemplateRouter);
 app.use(exampleExerciseRouter);
 app.use(categoryRouter);
 app.use(categoryLinkRouter);
+app.use(exerciseRouter);
 
 const SyncTables = async () => {
   try {
