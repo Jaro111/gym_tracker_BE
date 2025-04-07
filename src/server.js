@@ -24,7 +24,11 @@ const app = express();
 
 const port = process.env.PORT || 5001;
 
-app.use(cors());
+app.use(
+  cors({
+    credentials: true, // Allow cookies to be sent
+  })
+);
 app.use(express.json());
 
 app.use(userRouter);

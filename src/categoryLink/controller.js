@@ -5,6 +5,7 @@ const ExerciseCategoryLink = require("./model");
 
 const addCategoryLink = async (req, res) => {
   try {
+    console.log("start");
     const { exerciseId, categoryId } = req.body;
     const exerciseCategory = await ExerciseCategoryLink.create({
       exerciseId: exerciseId,
