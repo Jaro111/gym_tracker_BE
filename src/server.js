@@ -1,5 +1,6 @@
 require("dotenv").config();
 const sequelize = require("./db/connection");
+const resetTables = require("./utils/utils");
 const cors = require("cors");
 const express = require("express");
 const userRouter = require("./user/routes");
