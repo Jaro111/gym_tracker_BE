@@ -9,7 +9,28 @@ const addTraining = async (req, res) => {
       userId: req.authCheck.id,
     });
 
-    res.status(500).json({ message: "Training created", training: training });
+    res.status(200).json({ message: "Training created", training: training });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+// Delete training
+const deleteTraining = async (req, res) => {
+  try {
+    const { name } = req.body;
+
+    const training = await Training.destroy({
+      where: {
+        name: name,
+        userId: req.authCheck.id,
+      },
+    });
+
+    const trainings = await Training.findAll({
+      where: { userId: req.authCheck.id },
+    });
+
+    res.status(200).json({ message: "Training deleted", trainings: trainings });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
@@ -24,7 +45,7 @@ const getTrainingById = async (req, res) => {
       where: { id: id, userId: req.authCheck.id },
     });
     console.log(training);
-    res.status(500).json({ message: "Training uploaded", training: training });
+    res.status(200).json({ message: "Training uploaded", training: training });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
@@ -37,11 +58,16 @@ const getAllUserTrainings = async (req, res) => {
     });
 
     res
-      .status(500)
+      .status(200)
       .json({ message: "Trainings uploaded", trainings: trainings });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
 };
 
-module.exports = { addTraining, getTrainingById, getAllUserTrainings };
+module.exports = {
+  addTraining,
+  getTrainingById,
+  getAllUserTrainings,
+  deleteTraining,
+};
