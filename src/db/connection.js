@@ -1,15 +1,5 @@
 const { Sequelize } = require("sequelize");
 
-// const sequelize = new Sequelize(process.env.URI, {
-//   dialect: "postgres",
-//   logging: false, // Set to true for debugging
-// });
-
-// sequelize.authenticate();
-// console.log("DataBase connection is working...");
-
-// backend/test.js
-
 const sequelize = new Sequelize({
   dialect: "mysql",
   host: process.env.AWS_URI,
@@ -18,13 +8,7 @@ const sequelize = new Sequelize({
   database: "gym_tracker",
 });
 
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection successful!");
-  } catch (error) {
-    console.error("Connection failed:", error);
-  }
-})();
+sequelize.authenticate();
+console.log("DataBase connection is working...");
 
 module.exports = sequelize;

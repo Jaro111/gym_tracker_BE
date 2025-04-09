@@ -21,6 +21,7 @@ const getAllCategoriesExercises = async (req, res) => {
     const exerciseCategoriesData = await ExampleCategory.findAll({
       include: ExampleExercise,
     });
+    console.log(exerciseCategoriesData);
 
     res
       .status(200)
