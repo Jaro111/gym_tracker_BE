@@ -7,9 +7,7 @@ const userRouter = require("./user/routes");
 const trainingRouter = require("./trainig/routes");
 const exerciseTemplateRouter = require("./exerciseTemplate/routes");
 const dayRouter = require("./day/routes");
-const categoryRouter = require("./exampleCategory/routes");
 const exampleExerciseRouter = require("./exampleExercise/routes");
-const categoryLinkRouter = require("./categoryLink/routes");
 const exerciseRouter = require("./exercise/routes");
 const User = require("./user/model");
 const Training = require("./trainig/model");
@@ -18,8 +16,6 @@ const ExerciseTemplate = require("./exerciseTemplate/model");
 const Exercise = require("./exercise/model");
 const Set = require("./set/model");
 const ExampleExercise = require("./exampleExercise/model");
-const ExampleCategory = require("./exampleCategory/model");
-const ExerciseCategoryLink = require("./categoryLink/model");
 
 const app = express();
 
@@ -37,8 +33,6 @@ app.use(dayRouter);
 app.use(trainingRouter);
 app.use(exerciseTemplateRouter);
 app.use(exampleExerciseRouter);
-app.use(categoryRouter);
-app.use(categoryLinkRouter);
 app.use(exerciseRouter);
 
 const SyncTables = async () => {
@@ -64,14 +58,6 @@ const SyncTables = async () => {
     // ExampleExercise relations
     User.hasMany(ExampleExercise, { foreignKey: "userId" });
     ExampleExercise.belongsTo(User, { foreignKey: "userId" });
-    ExampleExercise.belongsToMany(ExampleCategory, {
-      through: ExerciseCategoryLink,
-      foreignKey: "exerciseId",
-    });
-    ExampleCategory.belongsToMany(ExampleExercise, {
-      through: ExerciseCategoryLink,
-      foreignKey: "categoryId",
-    });
 
     await User.sync();
     await Training.sync();
@@ -79,9 +65,7 @@ const SyncTables = async () => {
     await ExerciseTemplate.sync();
     await Exercise.sync();
     await Set.sync();
-    await ExampleCategory.sync();
     await ExampleExercise.sync();
-    await ExerciseCategoryLink.sync();
 
     console.log("Tables synced successfully.");
   } catch (error) {

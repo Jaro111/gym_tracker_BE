@@ -1,11 +1,11 @@
 const exampleExercise = require("./model");
-const ExampleCategory = require("../exampleCategory/model");
 
 const addExampleExercise = async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, category } = req.body;
     const exercise = await exampleExercise.create({
       name: name,
+      category: category,
       userId: req.authCheck.id,
     });
 
@@ -16,19 +16,14 @@ const addExampleExercise = async (req, res) => {
 };
 //
 // Get all data
-const getAllExerciseCategory = async (req, res) => {
+const getAllExampleExerises = async (req, res) => {
   try {
-    const exerciseCategoriesData = await exampleExercise.findAll({
-      include: ExampleCategory,
-    });
-    console.log(exerciseCategoriesData);
+    const exampleExercises = await exampleExercise.findAll();
 
-    res
-      .status(200)
-      .json({ message: "Data Uploaded", data: exerciseCategoriesData });
+    res.status(200).json({ message: "Data Uploaded", data: exampleExercises });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
 };
 
-module.exports = { addExampleExercise, getAllExerciseCategory };
+module.exports = { addExampleExercise, getAllExampleExerises };

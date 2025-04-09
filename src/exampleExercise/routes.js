@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const { addExampleExercise, getAllExerciseCategory } = require("./controller");
+const { addExampleExercise, getAllExampleExerises } = require("./controller");
 const { tokenCheck } = require("../middleware/auth");
 
 const exampleExerciseRouter = Router();
@@ -12,8 +12,8 @@ exampleExerciseRouter.post(
 );
 
 exampleExerciseRouter.get(
-  "/example/getAllExerciseCategory",
-  getAllExerciseCategory
+  "/example/getAllExampleExerises",
+  getAllExampleExerises
 );
 
 module.exports = exampleExerciseRouter;
