@@ -7,9 +7,10 @@ const addExerciseTemplate = async (req, res) => {
     const exerise = await ExerciseTemplate.create({
       name: name,
       sets: sets,
-      setsFrom: setsFrom,
-      setsTo: setsTo,
+
       reps: reps,
+      repsFrom: setsFrom,
+      repsTo: setsTo,
       category: category,
       trainingId: trainingId,
     });
@@ -20,4 +21,20 @@ const addExerciseTemplate = async (req, res) => {
   }
 };
 
-module.exports = { addExerciseTemplate };
+const getAllExerciseTemplate = async (req, res) => {
+  try {
+    console.log("dupa");
+    const { trainingId } = req.params;
+    const exercises = await ExerciseTemplate.findAll({
+      where: { trainingId: trainingId },
+    });
+
+    res
+      .status(200)
+      .json({ message: "Exercises uploaded", exercises: exercises });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
+module.exports = { addExerciseTemplate, getAllExerciseTemplate };

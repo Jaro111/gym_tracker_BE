@@ -12,7 +12,6 @@ const ExampleExercise = sequelize.define(
     category: {
       type: DataTypes.STRING(40),
       allowNull: false,
-      unique: true,
     },
     userId: {
       type: DataTypes.INTEGER,
