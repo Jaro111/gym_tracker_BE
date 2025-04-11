@@ -78,6 +78,7 @@ app.get("/health", (req, res) => {
 });
 
 app.listen(port, () => {
+  // resetTables();
   SyncTables();
   console.log(`Server listen on ${port}`);
 });

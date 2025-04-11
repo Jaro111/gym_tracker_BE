@@ -41,4 +41,18 @@ const addTrainingDay = async (req, res) => {
   }
 };
 
-module.exports = { addTrainingDay };
+const getAllTrainingDays = async (req, res) => {
+  try {
+    const trainingDays = await Day.findAll({
+      where: { userId: req.authCheck.id },
+    });
+
+    res
+      .status(200)
+      .json({ message: "Training Days Uploaded", trainingDays: trainingDays });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
+module.exports = { addTrainingDay, getAllTrainingDays };
