@@ -2,7 +2,11 @@ const { Router } = require("express");
 
 const exerciseTemplateRouter = Router();
 
-const { addExerciseTemplate, getAllExerciseTemplate } = require("./controller");
+const {
+  addExerciseTemplate,
+  getAllExerciseTemplate,
+  updateExercise,
+} = require("./controller");
 const { tokenCheck } = require("../middleware/auth");
 
 // Add exercise
@@ -17,6 +21,13 @@ exerciseTemplateRouter.post(
 exerciseTemplateRouter.get(
   "/exercises/getAllExercisesTemplate/:trainingId",
   getAllExerciseTemplate
+);
+
+// Update
+exerciseTemplateRouter.put(
+  "/exercises/updateExercises",
+  tokenCheck,
+  updateExercise
 );
 
 module.exports = exerciseTemplateRouter;
