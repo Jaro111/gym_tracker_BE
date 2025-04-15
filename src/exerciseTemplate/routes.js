@@ -6,6 +6,7 @@ const {
   addExerciseTemplate,
   getAllExerciseTemplate,
   updateExercise,
+  deleteExercise,
 } = require("./controller");
 const { tokenCheck } = require("../middleware/auth");
 
@@ -28,6 +29,12 @@ exerciseTemplateRouter.put(
   "/exercises/updateExercises",
   tokenCheck,
   updateExercise
+);
+// delete Exercise
+exerciseTemplateRouter.delete(
+  "/exercises/deleteExercise",
+  tokenCheck,
+  deleteExercise
 );
 
 module.exports = exerciseTemplateRouter;

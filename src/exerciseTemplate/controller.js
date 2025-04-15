@@ -71,6 +71,27 @@ const updateExercise = async (req, res) => {
   }
 };
 
+// Delete exercise
+
+const deleteExercise = async (req, res) => {
+  try {
+    const { id, trainingId } = req.body;
+    const exerciseToDelete = await ExerciseTemplate.findOne({
+      where: { id: id, trainingId: trainingId },
+    });
+
+    await ExerciseTemplate.destroy({
+      where: { id: id, trainingId: trainingId },
+    });
+    res.status(200).json({
+      message: "Exercises deleted",
+      data: exerciseToDelete,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
 const getAllExerciseTemplate = async (req, res) => {
   try {
     console.log("dupa");
@@ -91,4 +112,5 @@ module.exports = {
   addExerciseTemplate,
   getAllExerciseTemplate,
   updateExercise,
+  deleteExercise,
 };
