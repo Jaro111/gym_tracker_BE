@@ -9,6 +9,7 @@ const exerciseTemplateRouter = require("./exerciseTemplate/routes");
 const dayRouter = require("./day/routes");
 const exampleExerciseRouter = require("./exampleExercise/routes");
 const exerciseRouter = require("./exercise/routes");
+const weekPlanRouter = require("./weekPlan/routes");
 const User = require("./user/model");
 const Training = require("./trainig/model");
 const Day = require("./day/model");
@@ -16,6 +17,7 @@ const ExerciseTemplate = require("./exerciseTemplate/model");
 const Exercise = require("./exercise/model");
 const Set = require("./set/model");
 const ExampleExercise = require("./exampleExercise/model");
+const WeekPlan = require("./weekPlan/model");
 
 const app = express();
 
@@ -34,6 +36,7 @@ app.use(trainingRouter);
 app.use(exerciseTemplateRouter);
 app.use(exampleExerciseRouter);
 app.use(exerciseRouter);
+app.use(weekPlanRouter);
 
 const SyncTables = async () => {
   try {
@@ -42,10 +45,15 @@ const SyncTables = async () => {
     Training.belongsTo(User, { foreignKey: "userId" });
     User.hasMany(Day, { foreignKey: "userId" });
     Day.belongsTo(User, { foreignKey: "userId" });
+    User.hasMany(WeekPlan, { foreignKey: "userId" });
+    WeekPlan.belongsTo(User, { foreignKey: "userId" });
 
     // Training relationships
     Training.hasMany(ExerciseTemplate, { foreignKey: "trainingId" });
     ExerciseTemplate.belongsTo(Training, { foreignKey: "trainingId" });
+    //
+    Training.hasOne(WeekPlan, { foreignKey: "trainingId" });
+    WeekPlan.belongsTo(Training, { foreignKey: "trainingId" });
 
     // Day relationships
     Day.hasMany(Exercise, { foreignKey: "dayId" });
@@ -61,6 +69,7 @@ const SyncTables = async () => {
 
     await User.sync();
     await Training.sync();
+    await WeekPlan.sync();
     await Day.sync();
     await ExerciseTemplate.sync();
     await Exercise.sync();

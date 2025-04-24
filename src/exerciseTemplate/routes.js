@@ -7,6 +7,7 @@ const {
   getAllExerciseTemplate,
   updateExercise,
   deleteExercise,
+  getSetCountByCategory,
 } = require("./controller");
 const { tokenCheck } = require("../middleware/auth");
 
@@ -35,6 +36,12 @@ exerciseTemplateRouter.delete(
   "/exercises/deleteExercise",
   tokenCheck,
   deleteExercise
+);
+// get Set Count By category
+exerciseTemplateRouter.get(
+  "/exercises/getSetCount/:idString",
+  tokenCheck,
+  getSetCountByCategory
 );
 
 module.exports = exerciseTemplateRouter;
