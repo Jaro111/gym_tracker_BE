@@ -94,7 +94,6 @@ const deleteExercise = async (req, res) => {
 
 const getAllExerciseTemplate = async (req, res) => {
   try {
-    console.log("dupa");
     const { trainingId } = req.params;
     const exercises = await ExerciseTemplate.findAll({
       where: { trainingId: trainingId },
@@ -108,9 +107,71 @@ const getAllExerciseTemplate = async (req, res) => {
   }
 };
 
+const getSetCountByCategory = async (req, res) => {
+  try {
+    const { idString } = req.params;
+    console.log("dupa");
+    console.log("String", idString);
+    console.log("STRING", idString);
+    const idArray = idString.split(",");
+    console.log(idArray);
+    // const idNumberArray = [];
+    // idArray.map((item) => {
+    //   idNumberArray.push(Number(item));
+    // });
+
+    const allWeekExercises = await ExerciseTemplate.findAll({
+      where: { trainingId: idArray },
+    });
+    let nChest = 0;
+    let nLegs = 0;
+    let nBack = 0;
+    let nCore = 0;
+    let nBiceps = 0;
+    let nTriceps = 0;
+    let nShoulders = 0;
+
+    const chest = allWeekExercises.map((item, index) => {
+      if (item.category === "Chest") {
+        nChest = nChest + item.sets;
+      } else if (item.category === "Legs") {
+        nLegs = nLegs + item.sets;
+      } else if (item.category === "Back") {
+        nBack = nBack + item.sets;
+      } else if (item.category === "Core") {
+        nCore = nCore + item.sets;
+      } else if (item.category === "Biceps") {
+        nBiceps = nBiceps + item.sets;
+      } else if (item.category === "Triceps") {
+        nTriceps = nTriceps + item.sets;
+      } else if (item.category === "Shoulders") {
+        nShoulders = nShoulders + item.sets;
+      }
+    });
+
+    const categoryCount = [
+      { category: "Chest", sets: nChest },
+      { category: "Legs", sets: nLegs },
+      { category: "Back", sets: nBack },
+      { category: "Core", sets: nCore },
+      { category: "Biceps", sets: nBiceps },
+      { category: "Triceps", sets: nTriceps },
+      { category: "Shoulders", sets: nShoulders },
+    ];
+
+    res.status(200).json({
+      message: "Stats uploaded",
+      setsCount: categoryCount,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
 module.exports = {
   addExerciseTemplate,
   getAllExerciseTemplate,
   updateExercise,
   deleteExercise,
+  getSetCountByCategory,
 };

@@ -7,6 +7,7 @@ const {
   getTrainingById,
   getAllUserTrainings,
   deleteTraining,
+  getTrainingNamesAndIds,
 } = require("./controller");
 const { tokenCheck } = require("../middleware/auth");
 
@@ -24,5 +25,11 @@ trainingRouter.get(
 );
 // delete Training
 trainingRouter.delete("/training/deleteTraining", tokenCheck, deleteTraining);
+// getKeys and Values of Training
+trainingRouter.get(
+  "/training/getTrainingNamesAndIds",
+  tokenCheck,
+  getTrainingNamesAndIds
+);
 
 module.exports = trainingRouter;
