@@ -6,7 +6,9 @@ const Training = require("../trainig/model");
 // Create Training day
 const addTrainingDay = async (req, res) => {
   try {
-    const { userId, date, trainingId } = req.body;
+    const { date, trainingId } = req.body;
+
+    const userId = req.authCheck.id;
 
     const templateData = await ExerciseTemplate.findAll({
       where: { trainingId: trainingId },
