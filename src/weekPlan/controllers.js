@@ -28,7 +28,7 @@ const getWeekPlan = async (req, res) => {
 
 const removeTraining = async (req, res) => {
   try {
-    const { trainingId, userId } = req.body;
+    const { trainingId } = req.body;
     await WeekPlan.destroy({
       where: { trainingId: trainingId, userId: req.authCheck.id },
     });

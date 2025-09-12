@@ -5,7 +5,7 @@ const { addTrainingDay, getAllTrainingDays } = require("./controller");
 const { tokenCheck } = require("../middleware/auth");
 
 // Add training day
-dayRouter.post("/day/addTrainingDay", addTrainingDay);
+dayRouter.post("/day/addTrainingDay", tokenCheck, addTrainingDay);
 
 // Get training day
 dayRouter.get("/day/getAllTrainingDays", tokenCheck, getAllTrainingDays);
