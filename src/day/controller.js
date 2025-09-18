@@ -37,7 +37,7 @@ const addTrainingDay = async (req, res) => {
     //
     const exercises = await Exercise.bulkCreate(exerciseData);
     //
-    res.status(200).json({ message: "Assigned", exercises: exercises });
+    res.status(200).json({ message: "Assigned", trainingDay: day });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
@@ -57,4 +57,24 @@ const getAllTrainingDays = async (req, res) => {
   }
 };
 
-module.exports = { addTrainingDay, getAllTrainingDays };
+const deleteTrainingDay = async (req, res) => {
+  try {
+    const day = await Day.findOne({
+      where: {
+        userId: req.authCheck.id,
+        date: req.body.date,
+      },
+    });
+    const dayId = day.dataValues.id;
+    //
+    await Exercise.destroy({ where: { dayId: dayId } });
+
+    await Day.destroy({ where: { id: dayId } });
+
+    res.status(200).json({ message: "Day Deleted", day: day });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
+module.exports = { addTrainingDay, getAllTrainingDays, deleteTrainingDay };
