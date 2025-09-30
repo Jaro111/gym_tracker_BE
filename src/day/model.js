@@ -10,6 +10,7 @@ const Day = sequelize.define(
       allowNull: false,
       references: { model: "Users", key: "id" },
     },
+    color: { type: DataTypes.STRING, allowNull: false },
 
     date: {
       type: DataTypes.DATEONLY,

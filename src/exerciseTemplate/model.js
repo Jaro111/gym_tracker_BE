@@ -11,7 +11,6 @@ const ExerciseTemplate = sequelize.define(
     repsFrom: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
     repsTo: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
     maxWeight: { type: DataTypes.FLOAT, allowNull: true },
-    lastWeight: { type: DataTypes.FLOAT, allowNull: true },
     category: { type: DataTypes.STRING(20), allowNull: false },
     trainingId: {
       type: DataTypes.INTEGER,

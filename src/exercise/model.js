@@ -14,13 +14,13 @@ const Exercise = sequelize.define(
     repsFrom: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
     repsTo: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
     maxWeight: { type: DataTypes.FLOAT, allowNull: true },
-    lastWeight: { type: DataTypes.FLOAT, allowNull: true },
     category: { type: DataTypes.STRING(20), allowNull: false },
     dayId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: { model: "Days", key: "id" },
     },
+    color: { type: DataTypes.STRING, allowNull: false },
   },
   {
     timestamps: false,
