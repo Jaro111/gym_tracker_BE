@@ -15,7 +15,7 @@ const ExampleExercise = sequelize.define(
     },
     userId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: { model: "Users", key: "id" },
     },
   },

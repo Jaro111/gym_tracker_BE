@@ -20,8 +20,10 @@ const addTrainingDay = async (req, res) => {
     const day = await Day.create({
       userId: userId,
       trainingName: trainingName.name,
+      color: trainingName.color,
       date: date,
     });
+    console.log(day);
 
     const exerciseData = templateData.map((template) => ({
       name: template.name,
@@ -30,14 +32,14 @@ const addTrainingDay = async (req, res) => {
       setsTo: template.setsTo,
       reps: template.reps,
       maxWeight: template.maxWeight,
-      lastWeight: template.lastWeight,
       category: template.category,
       dayId: day.id,
+      color: day.color,
     }));
     //
     const exercises = await Exercise.bulkCreate(exerciseData);
     //
-    res.status(200).json({ message: "Assigned", trainingDay: day });
+    res.status(200).json({ message: "Assigned", trainingDay: exercises });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }

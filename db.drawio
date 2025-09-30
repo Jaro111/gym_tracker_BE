@@ -1,22 +1,22 @@
 <mxfile host="65bd71144e">
     <diagram id="vhW5LKsrxmCmwEbVGmDp" name="Page-1">
-        <mxGraphModel dx="548" dy="702" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="695" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="&lt;u&gt;&lt;b&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;TRAINING&lt;/font&gt;&lt;/b&gt;:&lt;/u&gt;&lt;div&gt;&lt;u&gt;UserID&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="50" y="310" width="140" height="100" as="geometry"/>
+                    <mxGeometry x="20" y="310" width="140" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;DAY&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;UserID&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;{&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 13px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;Create training Day&amp;nbsp;&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 13px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;Copying&amp;nbsp;&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 13px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;Exercise Template&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;span style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-size: 13px;&quot;&gt;&lt;b style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;&lt;u style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251);&quot;&gt;by Training Id&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;}&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="440" y="270" width="140" height="140" as="geometry"/>
+                    <mxGeometry x="510" y="270" width="140" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;EXERCISE&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;:&lt;div&gt;DayID&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="290" y="420" width="170" height="100" as="geometry"/>
+                    <mxGeometry x="290" y="440" width="170" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="&lt;b&gt;&lt;u&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;USER:&lt;/font&gt;&lt;/u&gt;&lt;/b&gt;&lt;div&gt;NAME&lt;/div&gt;&lt;div&gt;EMIAL&lt;/div&gt;&lt;div&gt;PASSWORD&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="350" y="60" width="130" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1" source="6">
+                <mxCell id="7" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="320" y="180" as="sourcePoint"/>
                         <mxPoint x="170" y="290" as="targetPoint"/>
@@ -36,37 +36,55 @@
                         <mxPoint x="470" y="470" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=0.323;exitY=0.992;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1" source="6">
+                <mxCell id="12" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=0.323;exitY=0.992;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="6" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="410" y="190" as="sourcePoint"/>
                         <mxPoint x="340" y="300" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="13" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=0.615;exitY=0.992;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1" source="6">
+                <mxCell id="13" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="460" y="190" as="sourcePoint"/>
-                        <mxPoint x="480" y="260" as="targetPoint"/>
+                        <mxPoint x="520" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="14" value="&lt;div&gt;&lt;div&gt;SET&lt;/div&gt;&lt;/div&gt;&lt;div&gt;ExerciseId&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="60" y="450" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;WEEK PLAN&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;UserID&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;TrainingId&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="15" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;WEEK PLAN&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;UserID&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;TrainingId&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="220" y="310" width="170" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;EXERCISE TEMPLATE&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;:&lt;div&gt;TrainingID&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="16" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;&lt;u&gt;EXERCISE TEMPLATE&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;:&lt;div&gt;TrainingID&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="60" y="50" width="170" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="1">
+                <mxCell id="17" value="" style="shape=flexArrow;endArrow=classic;html=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="110" y="290" as="sourcePoint"/>
                         <mxPoint x="100" y="160" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="18" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="1">
+                <mxCell id="18" value="" style="shape=flexArrow;endArrow=classic;html=1;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="280" y="480" as="sourcePoint"/>
                         <mxPoint x="190" y="479.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="" style="shape=flexArrow;endArrow=classic;html=1;exitX=0.323;exitY=0.992;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="402" y="189" as="sourcePoint"/>
+                        <mxPoint x="420" y="430" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="430" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="1" source="15" target="2">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="490" as="sourcePoint"/>
+                        <mxPoint x="200" y="489.5" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="180" y="360"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
             </root>

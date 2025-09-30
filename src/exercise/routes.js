@@ -6,7 +6,7 @@ const { tokenCheck } = require("../middleware/auth");
 const exerciseRouter = Router();
 
 exerciseRouter.get(
-  "/training/getTrainingByDate/:date",
+  "/exercises/getExercisesByDate/:date",
   tokenCheck,
   getTrainingByDate
 );

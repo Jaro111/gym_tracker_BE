@@ -19,7 +19,14 @@ const getTrainingByDate = async (req, res) => {
       include: ["Day"],
     });
 
-    res.status(200).json({ message: "Assigned", allExercises: allExercises });
+    res.status(200).json({ message: "Uploaded", allExercises: allExercises });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
+const getAllExercises = async () => {
+  try {
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
