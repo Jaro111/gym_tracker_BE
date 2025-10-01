@@ -1,4 +1,5 @@
 const Training = require("./model");
+const Day = require("../day/model");
 
 const addTraining = async (req, res) => {
   try {
@@ -84,6 +85,33 @@ const getTrainingNamesAndIds = async (req, res) => {
     res.status(500).json({ message: error.message, error: error });
   }
 };
+// Update color
+const updateTrainingColor = async (req, res) => {
+  try {
+    const { id, color } = req.body;
+
+    const training = await Training.findOne({
+      where: { id: id, userId: req.authCheck.id },
+    });
+
+    const day = await Day.update(
+      { color: color },
+      {
+        where: {
+          trainingName: training.name,
+        },
+      }
+    );
+    const updatedTraining = await training.update({ color: color });
+    res.status(200).json({
+      message: "Color uploaded",
+      training: updatedTraining,
+      day: day,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
 
 module.exports = {
   addTraining,
@@ -91,4 +119,5 @@ module.exports = {
   getAllUserTrainings,
   deleteTraining,
   getTrainingNamesAndIds,
+  updateTrainingColor,
 };

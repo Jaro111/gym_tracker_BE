@@ -20,7 +20,6 @@ const Exercise = sequelize.define(
       allowNull: false,
       references: { model: "Days", key: "id" },
     },
-    color: { type: DataTypes.STRING, allowNull: false },
   },
   {
     timestamps: false,

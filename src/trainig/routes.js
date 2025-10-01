@@ -8,6 +8,7 @@ const {
   getAllUserTrainings,
   deleteTraining,
   getTrainingNamesAndIds,
+  updateTrainingColor,
 } = require("./controller");
 const { tokenCheck } = require("../middleware/auth");
 
@@ -31,5 +32,7 @@ trainingRouter.get(
   tokenCheck,
   getTrainingNamesAndIds
 );
+// Update training Color
+trainingRouter.put("/training/updateColor", tokenCheck, updateTrainingColor);
 
 module.exports = trainingRouter;
