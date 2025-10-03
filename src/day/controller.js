@@ -49,6 +49,7 @@ const getAllTrainingDays = async (req, res) => {
   try {
     const trainingDays = await Day.findAll({
       where: { userId: req.authCheck.id },
+      order: [["date", "ASC"]],
     });
 
     res
