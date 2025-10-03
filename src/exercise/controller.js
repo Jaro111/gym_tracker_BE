@@ -25,11 +25,18 @@ const getTrainingByDate = async (req, res) => {
   }
 };
 
-const getAllExercises = async () => {
+const getAllExercisesAndDays = async (req, res) => {
   try {
+    const allExercises = await Exercise.findAll({
+      include: [{ model: Day, where: { userId: req.authCheck.id } }],
+    });
+
+    res
+      .status(200)
+      .json({ message: "Days Uploaded", allExercises: allExercises });
   } catch (error) {
     res.status(500).json({ message: error.message, error: error });
   }
 };
 
-module.exports = { getTrainingByDate };
+module.exports = { getTrainingByDate, getAllExercisesAndDays };
